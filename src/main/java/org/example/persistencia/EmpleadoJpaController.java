@@ -22,6 +22,8 @@ public class EmpleadoJpaController {
     }
 
     /**
+     * Manejador de conexión con la base de datos
+     *
      * @return
      */
     public EntityManager getEntityManager() {
@@ -34,8 +36,7 @@ public class EmpleadoJpaController {
      * @param empleado
      */
     public void create(Empleado empleado) {
-        EntityManager em = null;
-        em = getEntityManager();
+        EntityManager em = getEntityManager();
         em.getTransaction().begin();
         em.persist(empleado);
         em.getTransaction().commit();
@@ -45,11 +46,10 @@ public class EmpleadoJpaController {
      * Método que permite buscar un empleado por su id.
      *
      * @param id
-     * @return
+     * @return object
      */
     public Empleado read(Integer id) {
-        EntityManager em = null;
-        em = getEntityManager();
+        EntityManager em = getEntityManager();
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         Root<Empleado> root = cq.from(Empleado.class);
         cq.select(root).where(root.get("id").in(id));
@@ -63,8 +63,7 @@ public class EmpleadoJpaController {
      * @param empleado
      */
     public void update(Empleado empleado) {
-        EntityManager em = null;
-        em = getEntityManager();
+        EntityManager em = getEntityManager();
         em.getTransaction().begin();
         em.merge(empleado);
         em.getTransaction().commit();
@@ -76,8 +75,7 @@ public class EmpleadoJpaController {
      * @param id
      */
     public void delete(Integer id) {
-        EntityManager em = null;
-        em = getEntityManager();
+        EntityManager em = getEntityManager();
         em.getTransaction().begin();
         Empleado empleado = em.find(Empleado.class, id);
         em.remove(empleado);
@@ -87,11 +85,10 @@ public class EmpleadoJpaController {
     /**
      * Método que permite listar el contenido de la base de datos.
      *
-     * @return
+     * @return arraylist
      */
     public List<Empleado> findEmpleadoEntities() {
-        EntityManager em = null;
-        em = getEntityManager();
+        EntityManager em = getEntityManager();
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(Empleado.class));
         Query q = em.createQuery(cq);
@@ -99,12 +96,13 @@ public class EmpleadoJpaController {
     }
 
     /**
+     * Método que permite buscar los registros coincidentes en la base de datos según un cargo.
+     *
      * @param cargo
-     * @return
+     * @return arraylist
      */
     public List<Empleado> findEmpleadosByCargo(String cargo) {
-        EntityManager em = null;
-        em = getEntityManager();
+        EntityManager em = getEntityManager();
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         Root<Empleado> root = cq.from(Empleado.class);
         cq.select(root).where(root.get("cargo").in(cargo));

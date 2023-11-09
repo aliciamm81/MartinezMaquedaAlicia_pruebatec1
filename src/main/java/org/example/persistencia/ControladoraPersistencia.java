@@ -24,8 +24,11 @@ public class ControladoraPersistencia {
     }
 
     /**
+     * Método que dado un id lo pasa como parámetro al método del controlador que busca si hay registros coincidentes en
+     * la base de datos, si lo hay setea los valores en un objeto de tipo Empleado.
+     *
      * @param id
-     * @return
+     * @return object
      */
     public Empleado readEmpleado(Integer id) {
         try {
@@ -60,16 +63,16 @@ public class ControladoraPersistencia {
         System.out.println("********************** Borrar empleado por Id **********************");
         try {
             empleadoJpa.delete(id);
-            System.out.println("RESULTADO => Empleado con id: " + id + " eliminado.");
+            System.out.println("Empleado con id: " + id + " eliminado.");
         } catch (IllegalArgumentException e) {
-            System.out.println("RESULTADO => No se ha podido borrar el registro o no existe");
+            System.out.println("No se ha podido borrar el registro o no existe");
         }
     }
 
     /**
      * Método que llama al controlador que devuelve una lista de empleado
      *
-     * @return
+     * @return arraylist
      */
     public List<Empleado> findEmpleados() {
         System.out.println("********************** Lista de empleados ************************");
@@ -77,8 +80,11 @@ public class ControladoraPersistencia {
     }
 
     /**
+     * Método que dado un cargo lo pasa como parámetro al método del controlador que devuelve un arraylist con los
+     * registros que coincidan con este cargo.
+     *
      * @param cargo
-     * @return
+     * @return arraylist
      */
     public List<Empleado> findEmpleadosByCargo(String cargo) {
         System.out.println("********************** Lista de empleados con el cargo indicado **********************");
