@@ -2,9 +2,11 @@
 
 **Martinez Maqueda Alicia - pruebatec1**
 
+Ejercicio para la **pruebatec1** de Java básico - Documentación del proyecto.
+
 ## Comenzando 🚀
 
-Ejercicio para la **pruebatec1** de Java básico - Documentación del proyecto. Con estas instrucciones podrás obtener
+Con estas instrucciones podrás obtener
 una copia del proyecto en tu repositorio local y también conocerás el funcionamiento de la aplicación.
 
 ## Pre-requisitos 📋
@@ -15,7 +17,7 @@ de datos.
 
 ## Instalación 🔧
 
-Se necesita tener creada una base de datos con las siguientes sentencias:
+Para empezar hay que tener creada una base de datos con las siguientes sentencias:
 
 #### Crear base de datos :
 
@@ -90,11 +92,12 @@ de una base de datos **CRUD**.
 ### 1. Crear
 
 Voy a crear un usuario con los siguientes datos:
-Nombre: Alicia
-Apellidos: Martinez Maqueda
-Cargo: Programador
-Salario: 18000
-Fecha: 2023 / 11 / 09
+
+Nombre: *Alicia*,
+Apellidos: *Martinez Maqueda*,
+Cargo: *Programador*,
+Salario: *18000*,
+Fecha: *2023 / 11 / 09*
 
 #### Resultado obtenido:
 
